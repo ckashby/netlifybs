@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Carousel, Container, Form, Nav } from 'react-bootstrap';
+import { SummaryForm } from './pages/summary/SummaryForm';
 
 function App() {
   const [isDisabled, setIsDisabled] = useState(true);
@@ -31,6 +32,7 @@ function App() {
       </Nav>
       <hr />
       <h5>Please join our mailing list</h5>
+      <SummaryForm />
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
