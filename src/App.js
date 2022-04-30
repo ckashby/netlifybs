@@ -1,23 +1,20 @@
 import {
-  Accordion,
-  Breadcrumb,
   Button,
   Carousel,
   Container,
   Form,
   Nav,
-  Spinner,
 } from 'react-bootstrap';
 
 function App() {
   return (
     <Container>
       <Nav
-        activeKey="/home"
+        activeKey="/"
         onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
       >
         <Nav.Item>
-          <Nav.Link href="/home">Active</Nav.Link>
+          <Nav.Link href="/">Active</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-1">Link</Nav.Link>
@@ -33,13 +30,6 @@ function App() {
       </Nav>
       <hr />
       <h3>Welcome.</h3>
-      <Breadcrumb>
-        <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-          Library
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>Data</Breadcrumb.Item>
-      </Breadcrumb>
       <hr />
       <h5>Please join our mailing list</h5>
       <Form>
