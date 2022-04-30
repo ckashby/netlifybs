@@ -108,4 +108,3 @@ function App() {
 
 export default App;
 
-// http://placekitten.com/640/480
