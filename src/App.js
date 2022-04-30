@@ -67,7 +67,7 @@ function App() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://placekitten.com/600/420"
+            src="https://placekitten.com/600/420"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -78,7 +78,7 @@ function App() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://placekitten.com/720/540"
+            src="https://placekitten.com/720/540"
             alt="Second slide"
           />
 
@@ -90,7 +90,7 @@ function App() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://placekitten.com/640/480"
+            src="https://placekitten.com/640/480"
             alt="Third slide"
           />
 
