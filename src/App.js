@@ -1,12 +1,13 @@
-import {
-  Button,
-  Carousel,
-  Container,
-  Form,
-  Nav,
-} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Carousel, Container, Form, Nav } from 'react-bootstrap';
 
 function App() {
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const changeSubmitButton = () => {
+    setIsDisabled(!isDisabled);
+  };
+
   return (
     <Container>
       <Nav
@@ -29,8 +30,6 @@ function App() {
         </Nav.Item>
       </Nav>
       <hr />
-      <h3>Welcome.</h3>
-      <hr />
       <h5>Please join our mailing list</h5>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -46,10 +45,14 @@ function App() {
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check
+            type="checkbox"
+            label="Accept terms and conditions"
+            onClick={changeSubmitButton}
+          />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button id="submitButton" variant="primary" type="submit" disabled={isDisabled}>
+          Submit Order
         </Button>
       </Form>
       <hr />
@@ -97,4 +100,3 @@ function App() {
 }
 
 export default App;
-
