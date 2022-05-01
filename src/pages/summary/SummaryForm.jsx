@@ -9,7 +9,7 @@ export const SummaryForm = () => {
 
   return (
     <div>
-      <h3>SummaryForm</h3>
+      <h3>Summary Form</h3>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Email label</Form.Label>
