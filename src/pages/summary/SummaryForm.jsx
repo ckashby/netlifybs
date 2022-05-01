@@ -3,6 +3,11 @@ import { Button, Form } from 'react-bootstrap';
 
 export const SummaryForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
+  const checkboxLabel = (
+    <span>
+      I agree to the <span style={{ color: 'blue' }}>terms and conditions.</span>
+    </span>
+  );
   const changeSubmitButton = () => {
     setIsDisabled(!isDisabled);
   };
@@ -16,11 +21,15 @@ export const SummaryForm = () => {
           <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Check type="checkbox" label="Accept Terms and Conditions" onClick={changeSubmitButton} />
+          <Form.Check
+            type="checkbox"
+            label={checkboxLabel}
+            onClick={changeSubmitButton}
+          />
           <Form.Text className="text-muted">Do not worry</Form.Text>
         </Form.Group>
         <Button className="btn btn-primary" disabled={isDisabled}>
-          Submit
+          Confirm order
         </Button>
       </Form>
       <hr />
