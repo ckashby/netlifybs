@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Popover } from 'react-bootstrap';
 
 export const SummaryForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
+  const [showPopover, setShowPopover] = useState(false);
+
   const checkboxLabel = (
     <span>
       I agree to the <span style={{ color: 'blue' }}>terms and conditions.</span>
     </span>
   );
-  const changeSubmitButton = () => {
+
+  const toggleSubmitButton = () => {
     setIsDisabled(!isDisabled);
+  };
+
+  const togglePopover = () => {
+    setShowPopover(!showPopover);
   };
 
   return (
@@ -24,13 +31,17 @@ export const SummaryForm = () => {
           <Form.Check
             type="checkbox"
             label={checkboxLabel}
-            onClick={changeSubmitButton}
+            onClick={toggleSubmitButton}
           />
           <Form.Text className="text-muted">Do not worry</Form.Text>
         </Form.Group>
         <Button className="btn btn-primary" disabled={isDisabled}>
           Confirm order
         </Button>
+        <Button className="btn btn-secondary" onClick={togglePopover}>
+          Toggle Popover
+        </Button>
+        {showPopover ? <Popover>Popover</Popover> : null}
       </Form>
       <hr />
     </div>
