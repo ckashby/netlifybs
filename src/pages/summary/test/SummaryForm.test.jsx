@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SummaryForm } from '../SummaryForm';
 
@@ -18,11 +18,18 @@ test('Checkbox to be unchecked, click enables/disables submit button', () => {
 test('popover responds to hover', () => {
   render(<SummaryForm />);
   // popover starts out hidden
-  expect(screen.queryByText('Terms and conditions')).not.toBeInTheDocument();
+  const nullPopover = screen.queryByText(/no ice cream will be delivered/i);
+  expect(nullPopover).not.toBeInTheDocument();
+  // popover appears on hover/mouseover of checkbox label
+  const tandcText = screen.getByText(/terms and conditions./i);
+  userEvent.hover(tandcText);
+  // const popover = screen.getByText(/no ice cream will be delivered/i);
+  // expect(popover).toBeInTheDocument();
 
-  // popover appears on hover of checkbox label
-
-  // popover disappears on click of checkbox label
+  // popover disappears when mouse leaves checkbox label
+  userEvent.unhover(tandcText);
+  const nullPopoverAgain = screen.queryByText(/no ice cream will be delivered/i);
+  expect(nullPopoverAgain).not.toBeInTheDocument();
 
 
 });

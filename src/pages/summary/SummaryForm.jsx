@@ -38,10 +38,10 @@ export const SummaryForm = () => {
         <Button className="btn btn-primary" disabled={isDisabled}>
           Confirm order
         </Button>
-        <Button className="btn btn-secondary" onClick={togglePopover}>
+        {/* <Button className="btn btn-secondary" onClick={togglePopover}>
           Toggle Popover
-        </Button>
-        {showPopover ? <Popover>Popover</Popover> : null}
+        </Button> */}
+        {/* {showPopover ? <TandcPopover /> : null} */}
       </Form>
       <hr />
     </div>

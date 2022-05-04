@@ -1,8 +1,24 @@
 import React from 'react';
-import { Carousel, Container, Nav } from 'react-bootstrap';
+import {
+  Button,
+  Carousel,
+  Container,
+  Nav,
+  OverlayTrigger,
+  Popover,
+} from 'react-bootstrap';
 import { SummaryForm } from './pages/summary/SummaryForm';
 
 function App() {
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Header as="h3">Popover right</Popover.Header>
+      <Popover.Body>
+        And here's some <strong>amazing</strong> content. It's very engaging.
+        right?
+      </Popover.Body>
+    </Popover>
+  );
 
   return (
     <Container>
@@ -28,7 +44,11 @@ function App() {
       <hr />
       <h5>Please join our mailing list</h5>
       <SummaryForm />
-      
+
+      <OverlayTrigger trigger="hover" placement="right" overlay={popover}>
+        <Button variant="success">Hover to see Popover</Button>
+      </OverlayTrigger>
+
       <Carousel fade>
         <Carousel.Item>
           <img
