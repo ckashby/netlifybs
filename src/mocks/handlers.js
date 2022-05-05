@@ -3,8 +3,7 @@ import { rest } from "msw";
 export const handlers = [
   rest.get('http://localhost:3030/scoops', (req, res, ctx) => {
     return res(
-      ctx.json({
-        data: [
+      ctx.json([
           {
             name: "Mint Chip",
             imagePath: "https://placekitten.com/600/420"
@@ -17,14 +16,12 @@ export const handlers = [
             name: "Vanilla",
             image: "https://placekitten.com/640/480"
           }
-        ]
-      })
+        ])
     )
   }),
   rest.get('http://localhost:3030/toppings', (req, res, ctx) => {
     return res(
-      ctx.json({
-        data: [
+      ctx.json([
           {
             name: "Sprinkles",
             imagePath: "https://placekitten.com/600/420"
@@ -37,10 +34,6 @@ export const handlers = [
             name: "Nuts",
             image: "https://placekitten.com/640/480"
           }
-        ]
-      })
-    )
-  }),
-];
-
-
+        ])
+)})
+]
