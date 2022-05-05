@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, InputGroup, Input, FormControl, Stack } from 'react-bootstrap';
+import { Card, InputGroup, FormControl, Stack } from 'react-bootstrap';
 
-export const ScoopsList = () => {
+const ScoopsList = () => {
   return (
     <div>
       <h3>Scoops</h3>
@@ -57,3 +57,5 @@ export const ScoopsList = () => {
     </div>
   );
 };
+
+export default ScoopsList;

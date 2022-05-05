@@ -1,6 +1,6 @@
 import React from 'react';
-import { ScoopsList } from './ScoopsList';
-import { ToppingsList } from './ToppingsList';
+import ScoopsList from './ScoopsList';
+import ToppingsList from './ToppingsList';
 
 export const OrderSummary = () => {
   return (

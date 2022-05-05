@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, FormControl, InputGroup, Stack } from 'react-bootstrap';
 
-export const ToppingsList = () => {
+const ToppingsList = () => {
   return (
     <div>
       <h3>Toppings</h3>
@@ -51,3 +51,5 @@ export const ToppingsList = () => {
     </div>
   );
 };
+
+export default ToppingsList;

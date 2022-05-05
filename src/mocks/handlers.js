@@ -6,27 +6,41 @@ export const handlers = [
       ctx.json({
         data: [
           {
-            id: 1,
-            title: "Scoop 1",
-            description: "This is the first scoop",
-            image: "https://placekitten.com/600/420"
+            name: "Mint Chip",
+            imagePath: "https://placekitten.com/600/420"
           },
           {
-            id: 2,
-            title: "Scoop 2",
-            description: "This is the second scoop",
-            image: "https://placekitten.com/720/540"
+            name: "Chocolate",
+            imagePath: "https://placekitten.com/720/540"
           },
           {
-            id: 3,
-            title: "Scoop 3",
-            description: "This is the third scoop",
+            name: "Vanilla",
             image: "https://placekitten.com/640/480"
           }
         ]
       })
     )
-  })
+  }),
+  rest.get('http://localhost:3030/toppings', (req, res, ctx) => {
+    return res(
+      ctx.json({
+        data: [
+          {
+            name: "Sprinkles",
+            imagePath: "https://placekitten.com/600/420"
+          },
+          {
+            name: "Chocolate Chips",
+            imagePath: "https://placekitten.com/720/540"
+          },
+          {
+            name: "Nuts",
+            image: "https://placekitten.com/640/480"
+          }
+        ]
+      })
+    )
+  }),
 ];
 
 
