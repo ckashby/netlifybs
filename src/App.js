@@ -45,7 +45,7 @@ function App() {
       <h5>Please join our mailing list</h5>
       <SummaryForm />
 
-      <OverlayTrigger trigger="hover" placement="right" overlay={popover}>
+      <OverlayTrigger placement="right" overlay={popover}>
         <Button variant="success">Hover to see Popover</Button>
       </OverlayTrigger>
 
