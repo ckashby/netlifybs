@@ -1,12 +1,12 @@
 import React from 'react';
 import {
   Button,
-  Carousel,
   Container,
   Nav,
   OverlayTrigger,
   Popover,
 } from 'react-bootstrap';
+import { OrderSummary } from './pages/summary/OrderSummary';
 import { SummaryForm } from './pages/summary/SummaryForm';
 
 function App() {
@@ -49,45 +49,8 @@ function App() {
         <Button variant="success">Hover to see Popover</Button>
       </OverlayTrigger>
 
-      <Carousel fade>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://placekitten.com/600/420"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First Kitten</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://placekitten.com/720/540"
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Second Kitten</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://placekitten.com/640/480"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third Kitten</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+    <OrderSummary />
+      
     </Container>
   );
 }

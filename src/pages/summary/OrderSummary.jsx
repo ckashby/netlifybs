@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { ScoopsList } from './ScoopsList';
 
 export const OrderSummary = () => {
   return (
-    <h3>Order Summary</h3>
-  )
-}
+    <>
+      <h2>Design Your Sundae!</h2>
+      <ScoopsList />
+    </>
+  );
+};
