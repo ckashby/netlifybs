@@ -22,18 +22,18 @@ export const handlers = [
   rest.get('http://localhost:3030/toppings', (req, res, ctx) => {
     return res(
       ctx.json([
-          {
-            name: "Sprinkles",
-            imagePath: "https://placekitten.com/600/420"
-          },
-          {
-            name: "Chocolate Chips",
-            imagePath: "https://placekitten.com/720/540"
-          },
-          {
-            name: "Nuts",
-            image: "https://placekitten.com/640/480"
-          }
-        ])
-)})
+        {name: "Sprinkles",
+        imagePath: "https://placekitten.com/600/420"
+        },
+        {
+          name: "Chocolate Chips",
+          imagePath: "https://placekitten.com/720/540"
+        },
+        {
+          name: "Nuts",
+          imagePath: "https://placekitten.com/640/480"
+        }
+      ])
+    )
+  })
 ]
