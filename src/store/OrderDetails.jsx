@@ -1,8 +1,10 @@
 import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
+import { pricePerItem } from '../constants/index.js';
 
-const OrderDetailsCtx = createContext();
+const OrderDetailsCtx = createContext([]);
 
-function useOrderDetailsCtx() {
+// create custom hook to calculate subtotal
+export function useOrderDetailsCtx() {
   const context = useContext(OrderDetailsCtx);
 
   if (!context) {
@@ -17,13 +19,11 @@ function calculateSubtotal(optionType, optionCounts) {
   let optionCount = 0;
   for (const count of optionCounts[optionType].values()) {
     optionCount += count;
-
   }
-
-
+  return optionCount * pricePerItem[optionType];
 }
 
-function OrderDetailsProvider(props) {
+export function OrderDetailsProvider(props) {
   const [optionCounts, setOptionCounts] = useState({
     scoops: new Map(),
     toppings: new Map(),
@@ -57,8 +57,8 @@ function OrderDetailsProvider(props) {
     }
     // getter: options count for scoops and toppings
     // setter: update options count
-    return [{ ...optionCounts }, updateItemCount];
-  }, [optionCounts]);
+    return [{ ...optionCounts, totals }, updateItemCount];
+  }, [optionCounts, totals]);
 
   return <OrderDetailsCtx.Provider value={value} {...props} />;
 }

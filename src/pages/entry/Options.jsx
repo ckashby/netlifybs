@@ -4,6 +4,8 @@ import { Row } from 'react-bootstrap';
 import ScoopOption from './ScoopOption';
 import ToppingOption from './ToppingOption';
 import AlertBanner from '../common/AlertBanner';
+import { pricePerItem } from '../../constants/index.js';
+import { useOrderDetailsCtx } from '../../store/OrderDetails';
 
 export default function Options({ optionType }) {
   const [items, setItems] = useState([]);
@@ -22,6 +24,7 @@ export default function Options({ optionType }) {
 
   // TODO: replace null with ToppingOption when available
   const ItemComponent = optionType === 'scoops' ? ScoopOption : ToppingOption;
+  const title = optionType[0].toUpperCase() + optionType.slice(1).toLowerCase();
 
   const optionItems = items.map((item) => (
     <ItemComponent
@@ -31,5 +34,10 @@ export default function Options({ optionType }) {
     />
   ));
 
-  return <Row>{optionItems}</Row>;
+  return (
+    <>
+    <h2>{title}</h2>
+    <p>Price: {pricePerItem[optionType]} each</p>
+    <Row>{optionItems}</Row></>
+  );
 }

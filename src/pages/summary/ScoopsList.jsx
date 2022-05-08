@@ -44,8 +44,8 @@ const ScoopsList = () => {
             <Card.Body>
               <InputGroup className="mb-3">
                 <InputGroup.Text>Mint Chip</InputGroup.Text>
-                <FormControl
-                  placeholder="0"
+                <InputGroup.Number
+                  placeholder="10"
                   aria-label="Chocolate"
                   aria-describedby="basic-addon2"
                 />

@@ -1,57 +1,30 @@
-import React from 'react';
-import {
-  Button,
-  Container,
-  Nav,
-  OverlayTrigger,
-  Popover,
-} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { OrderDetailsProvider } from './store/OrderDetails';
+import { Button, Container, OverlayTrigger, Popover, InputGroup, FormControl, FormLabel, Form } from 'react-bootstrap';
+import OrderEntry from './pages/entry/OrderEntry';
+import Options from './pages/entry/Options';
 import { OrderSummary } from './pages/summary/OrderSummary';
 import { SummaryForm } from './pages/summary/SummaryForm';
+import ScoopOption from './pages/entry/ScoopOption';
+import ToppingOption from './pages/entry/ToppingOption';
+
 
 function App() {
-  const popover = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Popover right</Popover.Header>
-      <Popover.Body>
-        And here's some <strong>amazing</strong> content. It's very engaging.
-        right?
-      </Popover.Body>
-    </Popover>
-  );
 
   return (
+    <OrderDetailsProvider>
     <Container>
-      <Nav
-        activeKey="/"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-      >
-        <Nav.Item>
-          <Nav.Link href="/">Active</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-      <hr />
-      <h5>Please join our mailing list</h5>
-      <SummaryForm />
-
-      <OverlayTrigger placement="right" overlay={popover}>
-        <Button variant="success">Hover to see Popover</Button>
-      </OverlayTrigger>
-
-    <OrderSummary />
-      
+      <h1>Design your own Sundae</h1>
+      <OrderEntry>
+        <Options>
+          <ScoopOption />
+        </Options>
+        <Options>
+          <ToppingOption />
+        </Options>
+      </OrderEntry>
     </Container>
+    </OrderDetailsProvider>
   );
 }
 
